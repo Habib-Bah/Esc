@@ -1,4 +1,4 @@
-package comopendevup.model;
+package com.opendevup.model;
 
 import java.io.Serializable;
 
