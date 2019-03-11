@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Liste des Topos</title>
+</head>
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th> <th>Nom site</th> <th>Secteur</th> <th>Nombre de voies</th> <th>Hauteur</th> <th>Cotation</th> <th>Nombre de points</th> <th>Localisation</th> <th>Disponibilité</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="t:${listetopos}">
+			<td th:text="${t.id}"></td>
+			<td th:text="${t.nomsite}"></td>
+			<td th:text="${t.secteur}"></td>
+			<td th:text="${t.nombredevoie}"></td>
+			<td th:text="${t.hauteur}"></td>
+			<td th:text="${t.cotation}"></td>
+			<td th:text="${t.nombredepoint}"></td>
+			<td th:text="${t.localisation}"></td>
+			<td th:text="${t.disponibilite}"></td>
+		</tbody>
+	</table>
+
+	
+</body>
+</html>
