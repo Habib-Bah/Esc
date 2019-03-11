@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Liste des Topos</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
 
-	<table>
+  <div class="container spacer">
+	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>ID</th> <th>Nom site</th> <th>Secteur</th> <th>Nombre de voies</th> <th>Hauteur</th> <th>Cotation</th> <th>Nombre de points</th> <th>Localisation</th> <th>Disponibilité</th>
+				<th>ID</th> <th>Nom site</th> <th>Secteur</th> <th>Voies</th> <th>Hauteur</th> <th>Cotation</th> <th>Points</th> <th>Localisation</th> <th>Disponibilité</th>
 			</tr>
 		</thead>
 		
@@ -26,7 +29,7 @@
 			<td th:text="${t.disponibilite}"></td>
 		</tbody>
 	</table>
-
+  </div>
 	
 </body>
 </html>
