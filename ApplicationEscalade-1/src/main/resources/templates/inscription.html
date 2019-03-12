@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="style.css" rel="stylesheet">
+<title>Inscription</title>
+</head>
+
+<header>
+<h1> Entrer vous informations</h1>
+</header>
+
+<body>
+
+	
+	<form th:action="@{/login}" th:object="${inscriptionForm}" method = "post">
+	
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" autofocus ="autofocus"/>
+	
+		<label for="password">Password</label>
+		<input type="paswword" id="password" name="password"/>
+		
+		<label for="username">Email</label>
+		<input type="text" id="email" name="email" autofocus ="autofocus"/>
+		
+		<label for="username">Age</label>
+		<input type="text" id="age" name="age" autofocus ="age"/>
+		
+		<br/>
+		<input type= "submit" value="Inscription"/>
+	</form>
+	
+	
+</body>
+</html>

@@ -4,97 +4,112 @@
 <meta charset="UTF-8">
 <link href="style.css" rel="stylesheet">
 <title>Index Page</title>
-</head>
-<body>
-
-<header>
-	
-	<div class="conteneur">
-	
-		<h1>Viens on escalade<samp class="point-orange">.</samp></h1>
-		
-			<nav>
+ <title> Viens on grimpe </title>
+ </head>
+ 
+ <body>
+     <header>
+         <div class="conteneur">
+             <h1> Viens on grimpe<samp class="point-orange"> . </samp> </h1>
+             <nav>
                  <ul>
-                     <li><a th:href="@{/Topos/ListeTopos}"> Les Topos</a></li>
-                     <li><a th:href="@{/login}"> Connexion</a></li>
+                     <li><a th:href="@{/acceuil}"> Acceuil</a></li>
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{/connexion}"> Connexion</a></li>
                      <li><a th:href="@{/inscription}"> Inscription</a></li>
-                     
                  </ul>
-                 
              </nav>
-	</div>
-	
-</header>
-
-	<!--  <img th:src="@{/image/baguette-longue.jpg}" alt="memorynotfound logo"/> -->
-	<img th:src="@{/image/imp.jpg}" alt="memorynotfound logo"/>
-
- <section id="parties">
+         </div>
+     </header>
+     
+     <section id="image-principale">
+         <article style="background-image: url('image/article-image-1.jpg')"></article>
+     </section>
+     
+     
+     <section id="parties">
          <div class="conteneur">
              <ul>
                  <li id="partie1">
-                     <h4> Check les infos sur les sites </h4>
-                     <p> grace aux topos, tu peux avoir <br/>
-                        des infos sur un grands nombre <br/>
-                        de sites repertoriés dans notre base de données.
+                     <h4> Planifier </h4>
+                     <p> confiez-nous vos reves d'évasion : en famille <br>
+                         ou entre amis,nous trouverons la formule qui<br> comblera vos attentes.
                      </p>
                  </li>
                  
                  <li id="partie2">
-                     <h4> Reserver des sites  </h4>
-                     <p> Tu peux Reserver un site en<br/>
-                         te connectant avec ton compte, <br/>
-                         c'est simple et rapide 
+                     <h4> Organiser </h4>
+                     <p> Reserver votre creneau seul<br> ou avec votre famille<br> ou vos amis pour une experience riche et partagée.
                      </p>
                  </li>
                  
-
                  <li id="partie3">
-                     <h4> RQuoi de neuf</h4>
-                     <p> blabla <br/>
+                     <h4> Evadez vous </h4>
+                     <p> Nous nous chargerons d'assurer votre sécurité<br> et de veiller à votre pleine sérénité<br> tout au long de votre voyage.
                      </p>
                  </li>
+                 <div class="clear">
+                 </div>
              </ul>
-
-             <li id="partie4">
-                     <h4> Partage ton experience </h4>
-                     <p> Tu peux laisser des commentaires <br/>
-                        sur un site pour faire profiter <br/>
-                        aux autres des experiences que tu as passer
+         </div>
+     </section>
+     
+     <section id="possibilités">
+         <div class="conteneur">
+             <article style="background-image: url('image/article-image-1.jpg')">
+                 <div class="pos1">
+                     <h4> Grimpez en famille </h4>
+                     <p><small>
+                         Offrez le meilleur à ceux que<br> 
+                         vous aimez et partagez des<br>moments fabuleux
+                         </small>
                      </p>
-                 </li>
-             </ul>
-
-             <li id="partie5">
-                     <h4> Rejoins-nous </h4>
-                     <p> Tu n'a pas encore compre ? <br/>
-                        Rejoins notre communauté <br/>
-                        
+                     <a href="#" class="boutton2"> Plus d'infos </a>
+                 </div>
+             </article>
+             
+             <article style="background-image: url('image/article-image-2.jpg')">
+                 <div class="pos1">
+                     <h4> Envie de s'evader </h4>
+                     <p><small>
+                         Parfois un peu d'evasion serait<br> 
+                         le bienvenue et ferai le plus<br>grand bien
+                         </small>
                      </p>
-                 </li>
-             </ul>
-
-              <li id="partie6">
-                     <h4> Trouve un partenaire de grimpe</h4>
-                     <p> Tu peux facilement trouver <br/>
-                        quelqu'un avec qui grimper <br/>
-                        
-                     </p>
-                 </li>
-             </ul>
-
-
+                     <a href="#" class="boutton2"> Plus d'infos </a>
+                 </div>          
+             </article>
              <div class="clear">
                  </div>
          </div>
      </section>
-
-<footer>
-	<div class="conteneur">
-             <h1> Notre communauté<samp class="point-orange">.</samp></h1>
-             <div class="copyright"> copyright 2019. Tous droits réservés.</div>
+     
+     <section id="contact">
+         <div class="conteneur">
+             <h3> Laissez votre commentaire </h3>
+             <p> Partagez votre experience avec les autres utilisateurs à fin de vivre plainement votre experience</p>
+             
+             <form>
+                 <label for="name"> Nom </label>
+                 <input type="text" id="name" placeholder="Votre nom">      
+                 
+                 <label for="mail"> Email </label>
+                 <input type="text" id="mail" placeholder="Votre Email">
+                 
+                 <input type="submit" value="OK" class="boutton3"
+             </form>
+         </div>
+     </section>
+     
+     <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
          
          </div>
-</footer>
-</body>
+     </footer>
+    
+ </body>
+
+</html>
 </html>
