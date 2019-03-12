@@ -1,0 +1,184 @@
+.spacer {
+    margin-top: 40px;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+h1
+{
+    font-family: cursive;
+    font-size: 45px;
+    color: #444;
+    margin-top: 32px;
+}
+
+h2
+{
+    color: #444;
+    font-size: 55px;
+}
+
+h3
+{
+    font-size: 30px;
+    color: #444;
+}
+
+h4
+{
+    font-size: 24px;
+    color: #444;
+}
+
+p 
+{
+    line-height: 20px;
+    color: #777;
+}
+
+.conteneur 
+{
+ width: 940px;
+ margin: 0 auto;
+ padding: 0 10px;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.point-orange
+{
+    color: #FF7a00
+}
+
+.clear 
+{
+    clear: both;
+}
+
+small
+{
+    font-size: 13px;
+    font-family: italic;
+}
+
+a
+{
+    text-decoration: none;
+    color: #444
+}
+
+/* header */
+
+header 
+{
+    height: 120px;
+}
+
+header h1 
+{
+    float: left;
+}
+
+header nav
+{
+    float: right;
+    margin-top: 50px;
+}
+
+header nav ul li 
+{
+    display: inline-block;
+    float: left;
+}
+
+header nav ul li a 
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+
+#parties ul 
+{
+    margin: 80px 0;
+}
+
+#parties ul li
+{
+    width: 300px;
+    float: left;
+    padding-top: 140px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#parties h4
+{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#parties p 
+{
+    margin-bottom: 20px;
+}
+
+#partie1
+{
+    float: none;
+}
+
+#partie2
+{
+   float: none;
+}
+
+#partie3
+{
+     float: none;
+}
+
+#partie4
+{
+    float: none;
+    
+}
+
+#partie5
+{
+    float: none;
+}
+
+#partie6
+{
+    float: none;
+}
+
+footer
+{
+    height: 260px;
+    background-color: #444;
+}
+
+footer h1 
+{
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.copyright
+{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+    color: #777;
+}

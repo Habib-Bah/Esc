@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="style.css" rel="stylesheet">
+<title>Index Page</title>
+</head>
+<body>
+
+<header>
+	
+	<div class="conteneur">
+	
+		<h1>Viens on escalade<samp class="point-orange">.</samp></h1>
+		
+			<nav>
+                 <ul>
+                     <li><a th:href="@{/Topos/ListeTopos}"> Les Topos</a></li>
+                     <li><a th:href="@{/login}"> Connexion</a></li>
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                     
+                 </ul>
+                 
+             </nav>
+	</div>
+	
+</header>
+
+	<!--  <img th:src="@{/image/baguette-longue.jpg}" alt="memorynotfound logo"/> -->
+	<img th:src="@{/image/imp.jpg}" alt="memorynotfound logo"/>
+
+ <section id="parties">
+         <div class="conteneur">
+             <ul>
+                 <li id="partie1">
+                     <h4> Check les infos sur les sites </h4>
+                     <p> grace aux topos, tu peux avoir <br/>
+                        des infos sur un grands nombre <br/>
+                        de sites repertoriés dans notre base de données.
+                     </p>
+                 </li>
+                 
+                 <li id="partie2">
+                     <h4> Reserver des sites  </h4>
+                     <p> Tu peux Reserver un site en<br/>
+                         te connectant avec ton compte, <br/>
+                         c'est simple et rapide 
+                     </p>
+                 </li>
+                 
+
+                 <li id="partie3">
+                     <h4> RQuoi de neuf</h4>
+                     <p> blabla <br/>
+                     </p>
+                 </li>
+             </ul>
+
+             <li id="partie4">
+                     <h4> Partage ton experience </h4>
+                     <p> Tu peux laisser des commentaires <br/>
+                        sur un site pour faire profiter <br/>
+                        aux autres des experiences que tu as passer
+                     </p>
+                 </li>
+             </ul>
+
+             <li id="partie5">
+                     <h4> Rejoins-nous </h4>
+                     <p> Tu n'a pas encore compre ? <br/>
+                        Rejoins notre communauté <br/>
+                        
+                     </p>
+                 </li>
+             </ul>
+
+              <li id="partie6">
+                     <h4> Trouve un partenaire de grimpe</h4>
+                     <p> Tu peux facilement trouver <br/>
+                        quelqu'un avec qui grimper <br/>
+                        
+                     </p>
+                 </li>
+             </ul>
+
+
+             <div class="clear">
+                 </div>
+         </div>
+     </section>
+
+<footer>
+	<div class="conteneur">
+             <h1> Notre communauté<samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tous droits réservés.</div>
+         
+         </div>
+</footer>
+</body>
+</html>

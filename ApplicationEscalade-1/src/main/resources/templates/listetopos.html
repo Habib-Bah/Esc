@@ -9,6 +9,16 @@
 <body>
 
   <div class="container spacer">
+      <form th:action="@{ListeTopos}"methode="get">
+        <div class="form-groupe">
+            <label>Pays : </label>
+            <input type="text" name="Le Pays"/>
+            <button type="submit"> Chercher </button>
+        </div>
+      </form>
+  </div>
+
+  <div class="container spacer">
 	<table class="table table-striped">
 		<thead>
 			<tr>
