@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.opendevup.dao.ToposRepository;
+import com.opendevup.dao.UtilisateurRepository;
 import com.opendevup.model.Topos;
+import com.opendevup.model.Utilisateur;
 
 @SpringBootApplication
 public class ApplicationEscalade1Application {
@@ -17,6 +19,7 @@ public class ApplicationEscalade1Application {
 		ApplicationContext ctx = SpringApplication.run(ApplicationEscalade1Application.class, args);
 		
 		ToposRepository toposrepository = ctx.getBean(ToposRepository.class);
+		UtilisateurRepository utilisateurrepository = ctx.getBean(UtilisateurRepository.class);
 		toposrepository.save(new Topos("Site Lanister", 16, 11, "130m", "8C", 18, "France", true));
 		toposrepository.save(new Topos("Site Stark", 42, 25, "550m", "9A", 18, "France", true));
 		toposrepository.save(new Topos("Site River", 18, 15, "230m", "7C", 19, "Espagne", true));
@@ -39,6 +42,8 @@ public class ApplicationEscalade1Application {
 		
 		toposrepository.save(new Topos("Site PONG", 20, 21, "330m", "8C", 18, "Allemagne", true));
 		toposrepository.save(new Topos("Site ICNI", 14, 14, "160m", "6A", 120, "France", true));
+		
+		utilisateurrepository.save(new Utilisateur("Zappelini", "Kristelle", "zappelini@hotmail.fr", "123456"));
 	}
 
 }

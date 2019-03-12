@@ -14,6 +14,7 @@ public class Utilisateur implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	
 	@Column(name = "nom")
 	private String nom;
 
@@ -30,10 +31,12 @@ public class Utilisateur implements Serializable {
 		super();
 	}
 
-	public Utilisateur(String nom, String prenom) {
+	public Utilisateur(String nom, String prenom, String email, String motdepasse) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
+		this.email = email;
+		this.motdepasse = motdepasse;
 	}
 
 	public long getId() {
