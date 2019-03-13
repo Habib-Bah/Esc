@@ -204,7 +204,7 @@ header nav ul li a
 #possibilités article
 {
     width: 460px;
-    height: 270px;
+    height: 240px;
     float: left;
     border-radius: 10px;
 }
@@ -287,7 +287,7 @@ label
 
 input[type="text"]
 {
-    padding: 10px;
+    padding: 20px;
     font-size: 20px;
     margin-right: 20px;
     border: 2px solid #ddd;

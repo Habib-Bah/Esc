@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
 <link href="style.css" rel="stylesheet">
-<title>Index Page</title>
  <title> Viens on grimpe </title>
  </head>
  
@@ -15,7 +14,7 @@
                  <ul>
                      <li><a th:href="@{/acceuil}"> Acceuil</a></li>
                      <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
-                     <li><a th:href="@{/connexion}"> Connexion</a></li>
+                     <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
                      <li><a th:href="@{Topos/Inscription}"> Inscription</a></li>
                  </ul>
              </nav>
@@ -79,6 +78,9 @@
                      <a href="#" class="boutton2"> Plus d'infos </a>
                  </div>          
              </article>
+
+             
+
              <div class="clear">
                  </div>
          </div>
@@ -95,12 +97,11 @@
                  
                  <label for="mail"> Email </label>
                  <input type="text" id="mail" placeholder="Votre Email">
-                 
-                 <input type="submit" value="OK" class="boutton3"
+                 <input type="submit" value="OK" class="boutton3">
              </form>
          </div>
      </section>
-     
+
      <footer>
          <div class="conteneur">
              <h1> Notre communauté <samp class="point-orange">.</samp></h1>
@@ -111,5 +112,4 @@
     
  </body>
 
-</html>
 </html>

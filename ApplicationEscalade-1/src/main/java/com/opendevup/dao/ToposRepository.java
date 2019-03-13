@@ -2,16 +2,13 @@ package com.opendevup.dao;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.opendevup.model.Topos;
 
-public interface ToposRepository extends JpaRepository<Topos, Long> {
+public interface ToposRepository extends CrudRepository<Topos, Long> {
 	
 	
 	public List<Topos> findByLocalisation(String localisation);
-	
-	//@Query("select t from Topos t where t.localisation like x" )
-	//public Page<Topos> chercherTopo(@Param("x")String localisation, Pageable pageable);
 
 }
