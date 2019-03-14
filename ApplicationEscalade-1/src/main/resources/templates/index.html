@@ -12,10 +12,11 @@
              <h1> Viens on grimpe<samp class="point-orange"> . </samp> </h1>
              <nav>
                  <ul>
-                     <li><a th:href="@{/acceuil}"> Acceuil</a></li>
+                     <li><a th:href="@{Topos/Recherche}"> Reserver un site</a></li>
                      <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
                      <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
-                     <li><a th:href="@{Topos/Inscription}"> Inscription</a></li>
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                     <li><a th:href="@{/greeting}"> P</a></li>
                  </ul>
              </nav>
          </div>
@@ -63,7 +64,8 @@
                          vous aimez et partagez des<br>moments fabuleux
                          </small>
                      </p>
-                     <a href="#" class="boutton2"> Plus d'infos </a>
+                     <a th:href="@{Topos/Information1}"class="boutton2"> Plus d'infos </a>
+                     
                  </div>
              </article>
              
@@ -75,28 +77,29 @@
                          le bienvenue et ferai le plus<br>grand bien
                          </small>
                      </p>
-                     <a href="#" class="boutton2"> Plus d'infos </a>
+                     <a th:href="@{Topos/Information2}"class="boutton2"> Plus d'infos </a> 
                  </div>          
              </article>
 
-             
-
              <div class="clear">
                  </div>
+
          </div>
      </section>
      
      <section id="contact">
          <div class="conteneur">
+             <br>
              <h3> Laissez votre commentaire </h3>
+             <br>
              <p> Partagez votre experience avec les autres utilisateurs à fin de vivre plainement votre experience</p>
              
              <form>
                  <label for="name"> Nom </label>
                  <input type="text" id="name" placeholder="Votre nom">      
                  
-                 <label for="mail"> Email </label>
-                 <input type="text" id="mail" placeholder="Votre Email">
+                 <label for="mail"> Commentaire </label>
+                 <input type="text" id="mail" placeholder="Votre Commentaire">
                  <input type="submit" value="OK" class="boutton3">
              </form>
          </div>

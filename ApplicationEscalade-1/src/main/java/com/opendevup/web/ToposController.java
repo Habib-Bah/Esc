@@ -1,14 +1,16 @@
 package com.opendevup.web;
 
-import java.util.*;
+import java.util.List;
 
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.opendevup.dao.SiteRepository;
 import com.opendevup.dao.ToposRepository;
+import com.opendevup.dao.UtilisateurRepository;
 import com.opendevup.model.Site;
 import com.opendevup.model.Topos;
 import com.opendevup.model.Utilisateur;
@@ -22,6 +24,9 @@ public class ToposController {
 	
 	@Autowired
 	private SiteRepository siterepository;
+	
+	@Autowired
+	private UtilisateurRepository utilisateurrepository;
 
 	@RequestMapping(value = "/ListeTopos")
 	public String ListTopos(Model model) {
@@ -30,26 +35,27 @@ public class ToposController {
 		model.addAttribute("listetopos", topos);
 		return "listetopos";
 	}
-
-	@GetMapping(value = "/Inscription")
-	public String Inscription(Model model) {
-
-		model.addAttribute("utilisateur", new Utilisateur());
-		return "inscription";
-	}
-
-	@RequestMapping(value="/Connexionn")
-	public String Connexionn() {
-		
-		return("connexionn");
-		
+	
+	@RequestMapping(value ="/Connexion")
+	public String Connexion() {
+		return "connexion";
 	}
 	
-	@RequestMapping(value="/Connexion")
-	public String Connexion(String localisation, Model model) {
+	@RequestMapping(value="/Recherche")
+	public String Recherche(String localisation, Model model) {
 		List<Site> listesite = siterepository.findByLocalisation(localisation);
 		model.addAttribute("listesite", listesite);
-		return ("connexion");
+		return ("recherche");
 	}
-
+	
+	@RequestMapping(value="/Information1")
+	public String Information1() {
+		return "information1";
+	}
+	
+	@RequestMapping(value="/Information2")
+	public String Information2() {
+		return "information2";
+	}
+	
 }
