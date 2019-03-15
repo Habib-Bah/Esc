@@ -24,12 +24,12 @@ public class UtilisateurController {
 	
 	@GetMapping("/greeting")
     public String greetingForm(Model model) {
-        model.addAttribute("greeting", new Utilisateur());
+        model.addAttribute("greeting", new Commentaire());
         return "greeting";
     }
 	
 	@PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute Utilisateur greeting) {
+    public String greetingSubmit(@ModelAttribute Commentaire greeting) {
         return "result";
     }
 	
@@ -61,9 +61,4 @@ public class UtilisateurController {
         return "resultreservation";
     }
 	
-	@GetMapping("/commentaire")
-    public String commentaireForm(Model model) {
-        model.addAttribute("greeting", new Commentaire());
-        return "commentaire";
-    }
 }
