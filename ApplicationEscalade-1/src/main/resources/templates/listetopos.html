@@ -36,7 +36,11 @@
 			<td th:text="${t.cotation}"></td>
 			<td th:text="${t.nombredepoint}"></td>
 			<td th:text="${t.localisation}"></td>
-			<td th:text="${t.disponibilite}"></td>
+            <td th:text="${t.disponibilite}"></td>
+            <td>
+                <a th:href="@{/reservation}"> Reserver</a>
+            </td>
+			</tr>
 		</tbody>
 	</table>
   </div>

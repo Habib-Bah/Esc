@@ -3,6 +3,8 @@ package com.opendevup.model;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "utilisateur", schema = "public")
@@ -16,15 +18,21 @@ public class Utilisateur implements Serializable {
 
 	
 	@Column(name = "nom")
+	@NotNull
+	@Size(min=2, max=10) 
 	private String nom;
 
 	@Column(name = "prenom")
+	@NotNull
 	private String prenom;
 
 	@Column(name = "email")
+	@NotNull
+	@Size(min=5, max=20)
 	private String email;
 
 	@Column(name = "motdepasse")
+	@NotNull
 	private String motdepasse;
 
 	public Utilisateur() {

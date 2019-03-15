@@ -5,15 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.opendevup.dao.SiteRepository;
 import com.opendevup.dao.ToposRepository;
-import com.opendevup.dao.UtilisateurRepository;
 import com.opendevup.model.Site;
 import com.opendevup.model.Topos;
-import com.opendevup.model.Utilisateur;
 
 @Controller
 @RequestMapping(value = "/Topos")
@@ -25,8 +22,6 @@ public class ToposController {
 	@Autowired
 	private SiteRepository siterepository;
 	
-	@Autowired
-	private UtilisateurRepository utilisateurrepository;
 
 	@RequestMapping(value = "/ListeTopos")
 	public String ListTopos(Model model) {
