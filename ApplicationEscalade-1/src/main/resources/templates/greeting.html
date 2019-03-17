@@ -8,24 +8,46 @@
 </head>
 <body>
 
+      <header>
+         <div class="conteneur">
+             <h1> Laissez votre commentaire<samp class="point-orange"> . </samp> </h1>
+             <nav>
+                 <ul>
+                   <!-- <li><a th:href="@{Topos/Recherche}"> Reserver un site</a></li> -->
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
     <div class="container">
         <div class="col-md-6 col-sm-6 col-xs-12">
         <form th:action="@{/greeting}" th:object="${greeting}" method="post">
             <div class="form-group">
                 <label>Nom:</label>
-                <input class="form-control" type="text" name="Nom" th:field="*{nomutilisateur}" />
-                <span> </span>
+                <input class="form-control" type="text" name="Nom" th:field="*{nomutilisateur}" placeholder="Votre Nom"/>
+               <!-- <span class="text-danger" th:errors="${commentaire.nomutilisateur}"></span>-->
             </div>
 
             <div class="form-group">
                 <label>Texte:</label>
-                <input class="form-control" type="text" name="Texte" th:field="*{texte}" />
-                <span></span>
+                <input class="form-control" type="text" name="Texte" th:field="*{texte}" placeholder="Votre Texte"/>
+              <!--  <span class="text-danger" th:errors="${commentaire.texte}">></span> -->
             </div>
 
             <button class="btn btn-primary">Soumettre</button>
         </form>
     </div>
     </div>
+
+     <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
+         
+         </div>
+     </footer>
 </body>
 </html>

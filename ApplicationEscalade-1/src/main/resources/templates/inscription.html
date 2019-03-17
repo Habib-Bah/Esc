@@ -4,35 +4,50 @@
 <meta charset="UTF-8"/>
 <link href="style.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 <title>Formulaire d'Inscription</title>
 </head>
 
 <body>
+
+       <header>
+         <div class="conteneur">
+             <h1> Formulaire d'inscription<samp class="point-orange"> . </samp> </h1>
+             <nav>
+                 <ul>
+                   <!-- <li><a th:href="@{Topos/Recherche}"> Reserver un site</a></li> -->
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
+                     <li><a th:href="@{/greeting}">Commentaire</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
  
     <div class="container">
         <div class="col-md-6 col-sm-6 col-xs-12">
         <form th:action="@{saveUtilisateur}" method="POST">
             <div class="form-group">
                 <label>Nom:</label>
-                <input class="form-control" type="text" name="nom" th:value="${utilisateur.nom}"/>
+                <input class="form-control" type="text" name="nom" th:value="${utilisateur.nom}" placeholder="Votre Nom"/>
                 <span class="text-danger" th:errors="${utilisateur.nom}"></span>
             </div>
 
             <div class="form-group">
                 <label>Prenom:</label>
-                <input class="form-control" type="text" name="prenom" th:value="${utilisateur.prenom}"/>
+                <input class="form-control" type="text" name="prenom" th:value="${utilisateur.prenom}" placeholder="Votre Prenom"/>
                 <span class="text-danger" th:errors="${utilisateur.prenom}"></span>
             </div>
 
             <div class="form-group">
                 <label>Email:</label>
-                <input class="form-control" type="text" name="email" th:value="${utilisateur.email}"/>
+                <input class="form-control" type="text" name="email" th:value="${utilisateur.email}" placeholder="Votre Email"/>
                 <span class="text-danger" th:errors="${utilisateur.email}"></span>
             </div>
 
             <div class="form-group">
                 <label>Mot de passe:</label>
-                <input class="form-control" type="text" name="motdepasse" th:value="${utilisateur.motdepasse}"/>
+                <input class="form-control" type="text" name="motdepasse" th:value="${utilisateur.motdepasse}" placeholder="Votre Mot de passe"/>
                 <span class="text-danger" th:errors="${utilisateur.motdepasse}"></span>
             </div>
 
@@ -40,5 +55,13 @@
         </form>
     </div>
     </div>
+
+      <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
+         
+         </div>
+     </footer>
 </body>
 </html>

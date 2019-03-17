@@ -13,19 +13,19 @@
         <form th:action="@{reservation}" method="POST">
             <div class="form-group">
                 <label>Nom:</label>
-                <input class="form-control" type="text" name="nomutilisateur" th:value="${reservation.nomutilisateur}"/>
+                <input class="form-control" type="text" name="nomutilisateur" th:value="${reservation.nomutilisateur}" placeholder="Votre Nom"/>
                 <span></span>
             </div>
 
             <div class="form-group">
                 <label>Email:</label>
-                <input class="form-control" type="text" name="email" th:value="${reservation.email}"/>
+                <input class="form-control" type="text" name="email" th:value="${reservation.email}" placeholder="Votre Email"/>
                 <span></span>
             </div>
 
             <div class="form-group">
                 <label>Nom site:</label>
-                <input class="form-control" type="text" name="nomsite" th:value="${reservation.nomsite}"/>
+                <input class="form-control" type="text" name="nomsite" th:value="${reservation.nomsite}" placeholder="Le  site"/>
                 <span></span>
             </div>
 
