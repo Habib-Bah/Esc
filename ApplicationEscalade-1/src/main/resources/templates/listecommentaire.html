@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Liste des Topos</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+  <div class="container spacer">
+      <form th:action="@{ListeCommentaire}"methode="get">
+
+  <div class="container spacer">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID</th> <th>Nom site</th> <th>texte</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="t:${listecom}">
+			<td th:text="${t.id}"></td>
+			<td th:text="${t.nomutilisateur}"></td>
+			<td th:text="${t.texte}"></td>
+			
+			</tr>
+		</tbody>
+	</table>
+  </div>
+	
+</body>
+</html>

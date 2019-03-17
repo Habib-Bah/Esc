@@ -1,5 +1,7 @@
 package com.opendevup.web;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +49,14 @@ public class UtilisateurController {
 		commentairerepository.save(c);
 		return "resultatcommentaire";
 	}*/
+	
+	@RequestMapping(value = "/ListeCommentaire")
+	public String ListCommentaire(Model model) {
+
+		List<Commentaire> commentaire = commentairerepository.findAll();
+		model.addAttribute("listecom", commentaire);
+		return "listecommentaire";
+	}
 	@RequestMapping(value="/inscription")
 	public String Inscriptionform(Model model) {
 		model.addAttribute("utilisateur", new Utilisateur());
