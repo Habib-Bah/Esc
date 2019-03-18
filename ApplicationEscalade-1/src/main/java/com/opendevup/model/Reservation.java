@@ -4,7 +4,7 @@ public class Reservation {
 
 	private String nomutilisateur;
 	private String email;
-	private String nomsite;
+	private String nomtopo;
 	
 	Site site;
 	
@@ -12,7 +12,7 @@ public class Reservation {
 		super();
 		this.nomutilisateur = nomutilisateur;
 		this.email = email;
-		this.nomsite = nomsite;
+		this.nomtopo = nomsite;
 	}
 	public Reservation() {
 		super();
@@ -31,10 +31,10 @@ public class Reservation {
 		this.email = email;
 	}
 	public String getNomsite() {
-		return nomsite;
+		return nomtopo;
 	}
 	public void setNomsite(String nomsite) {
-		this.nomsite = nomsite;
+		this.nomtopo = nomsite;
 	}
 	
 	public String getSite(String nom) {

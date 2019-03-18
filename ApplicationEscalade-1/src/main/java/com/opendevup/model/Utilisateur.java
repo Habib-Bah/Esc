@@ -35,6 +35,8 @@ public class Utilisateur implements Serializable {
 	@NotNull
 	private String motdepasse;
 
+	
+	
 	public Utilisateur() {
 		super();
 	}
