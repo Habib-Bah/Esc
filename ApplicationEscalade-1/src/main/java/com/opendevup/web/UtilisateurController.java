@@ -86,4 +86,13 @@ public class UtilisateurController {
         return "resultreservation";
     }
 	
+	@RequestMapping(value="/Information1")
+	public String Information1() {
+		return "information1";
+	}
+	
+	@RequestMapping(value="/Information2")
+	public String Information2() {
+		return "information2";
+	}
 }

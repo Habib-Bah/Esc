@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+   <body>
+       
+      <p>Connexion</p>
+       
+      <div th:if="${#request.getParameter('error') == 'true'}"
+            style="color:red;margin:10px 0px;">
+         Erreur d'identification!!!<br />
+         Raison :
+         <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+            th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+           
+      </div>
+     
+      <p>Entrer votre nom d'utilisateur et votre mot de passe:</p>
+      <form name='f' th:action="@{/j_spring_security_check}" method='POST'>
+         
+            <div class="form-group">  
+               <label class="control-label">  Utilisateur: </label> 
+               <input type='text' name='username' value=''>
+             </div>
+            
+             <div class="form-group">
+               <label class="control-label">  Mot de passe: </label>
+               <input type='password' name='password' />
+            </div>
+           <!-- <tr>
+               <td><input name="submit" type="submit" value="submit" /></td>
+            </tr> -->
+
+            <button class="btn btn-primary">Login</button>
+         
+      </form>
+       
+      <br>
+      Username/pass:
+      <ul>
+        <li>dbuser1/123</li>
+        <li>dbadmin1/123</li>
+      </ul>  
+       
+      <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
+         
+         </div>
+     </footer>
+
+   </body>
+   
+</html>

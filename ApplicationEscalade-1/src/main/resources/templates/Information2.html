@@ -2,14 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
-<link href="style.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-<title>Escalade en famille </title>
+<title>Evasion en groupe </title>
 </head>
 
 <body>
+
+    <header>
+         <div class="conteneur">
+             <p> Escalade en famille </p>
+             <nav>
+                 <ul>
+                    <li> <a th:href="@{/admin}">Connexion</a> </li>      
+                    <!-- <li> <a th:href="@{/}"> Home </a> </li> -->
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                    <!-- <li><a th:href="@{login}"> Connexion</a></li> -->
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                     <li><a th:href="@{/greeting}">Commentaire</a></li>
+                     <li> <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a> </li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
     <p> A completer</p>
+
+    <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
+         
+         </div>
+     </footer>
 </body>
 
 </html>
