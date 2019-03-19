@@ -57,6 +57,7 @@ public class UtilisateurController {
 		model.addAttribute("listecom", commentaire);
 		return "listecommentaire";
 	}
+	
 	@RequestMapping(value="/inscription")
 	public String Inscriptionform(Model model) {
 		model.addAttribute("utilisateur", new Utilisateur());

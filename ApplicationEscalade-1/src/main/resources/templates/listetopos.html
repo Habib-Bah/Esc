@@ -2,11 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
-<title>Liste des Topos</title>
+<link href="style.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<title>Liste topos</title>
 </head>
 <body>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li> <a th:href="@{/login?logout}">Logout</a> </li>
+    </ul>
 
   <div class="container spacer">
       <form th:action="@{ListeTopos}"methode="get">
@@ -42,7 +47,8 @@
             </td>
 			</tr>
 		</tbody>
-	</table>
+    </table>
+    
   </div>
 	
 </body>
