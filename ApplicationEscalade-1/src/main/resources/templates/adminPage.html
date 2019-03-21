@@ -10,16 +10,12 @@
       <p>Bienvenue, :
          <span th:utext="${#request.userPrincipal.name}"></span>
       </p>
-
-     <!-- <th:block th:include="/_menu"></th:block> -->
        
      <header>
          <div class="conteneur">
              <h1> Viens on grimpe<samp class="point-orange"> . </samp> </h1>
              <nav>
                  <ul>
-                   <!-- <li> <a th:href="@{/admin}">Connexion</a> </li>  -->    
-                    <!-- <li> <a th:href="@{/}"> Home </a> </li> -->
                      <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
                      <li><a th:href="@{/inscription}"> Inscription</a></li>
                      <li><a th:href="@{/greeting}">Commentaire</a></li>
