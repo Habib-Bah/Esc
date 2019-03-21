@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<title>Formulaire d'Inscription</title>
+</head>
+<body>
+
+
+      <header>
+         <div class="conteneur">
+             <h1> Viens on grimpe<samp class="point-orange"> . </samp> </h1>
+             <nav>
+                 <ul>
+                    <li> <a th:href="@{/}">Acceuil</a> </li>  
+                    <li><a th:href="@{/admin}"> Connection</a></li>    
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{/greeting}">Commentaire</a></li>
+                     <li> <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Deconnection</a> </li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+     
+    <p>Succès !!! vos informations ont étés enregistré, vous pouvez vous connecter à present</p>
+     
+</body>
+</html>

@@ -1,13 +1,8 @@
 package com.opendevup;
 
-import java.util.List;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-
-import com.opendevup.dao.SiteRepository;
-import com.opendevup.model.Site;
 
 @SpringBootApplication
 public class ApplicationEscalade1Application {

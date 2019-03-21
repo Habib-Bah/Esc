@@ -16,10 +16,10 @@ public class AppUserMapper implements RowMapper<AppUser> {
 	@Override
     public AppUser mapRow(ResultSet rs, int rowNum) throws SQLException {
  
-        Long userId = rs.getLong("User_Id");
+        //Long userId = rs.getLong("User_Id");
         String userName = rs.getString("User_Name");
         String encrytedPassword = rs.getString("Encryted_Password");
  
-        return new AppUser(userId, userName, encrytedPassword);
+        return new AppUser(userName, encrytedPassword);
     }
 }

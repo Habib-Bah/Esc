@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 @Entity
 @Table(name = "utilisateur", schema = "public")
 public class Utilisateur implements Serializable {
@@ -34,19 +36,33 @@ public class Utilisateur implements Serializable {
 	@Column(name = "motdepasse")
 	@NotNull
 	private String motdepasse;
+	
+	@Column(name = "role")
+	@NotNull
+	private String role;
+	
+	@Column(name = "enabled")
+	@NotNull
+	private boolean enabled;
 
 	
 	
 	public Utilisateur() {
 		super();
+		
+		setRole("ROLE_ADMIN");
+		setEnabled(true);
 	}
 
 	public Utilisateur(String nom, String prenom, String email, String motdepasse) {
 		super();
 		this.nom = nom;
-		this.prenom = prenom;
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();       
+		this.prenom = encoder.encode(motdepasse);
 		this.email = email;
 		this.motdepasse = motdepasse;
+		setRole("ROLE_ADMIN");
+		setEnabled(true);
 	}
 
 	public long getId() {
@@ -88,5 +104,23 @@ public class Utilisateur implements Serializable {
 	public void setMotdepasse(String motdepasse) {
 		this.motdepasse = motdepasse;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	
+	
 
 }

@@ -2,6 +2,7 @@ package com.opendevup.web;
 
 import java.security.Principal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
@@ -9,11 +10,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.opendevup.dao.AppUserRepository;
+import com.opendevup.model.AppUser;
+import com.opendevup.utils.EncrytedPasswordUtils;
 import com.opendevup.utils.WebUtils;
 
 @Controller
 public class MainController {
 
+	@Autowired
+	AppUserRepository appuserrepository;
+	
+	EncrytedPasswordUtils encrypteP;
+	
 	@RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
 	public String welcomePage(Model model) {
 		model.addAttribute("title", "Viens on grimpe");
@@ -77,5 +86,30 @@ public class MainController {
 		}
 
 		return "403Page";
+	}
+	
+
+	@RequestMapping(value="/form", method = RequestMethod.GET)
+	public String formUser(Model model) {
+		
+		model.addAttribute("appuser", new AppUser());
+		return "formUser";
+	}
+	
+	@RequestMapping(value="/save", method = RequestMethod.POST)
+	public String save(Model model,  AppUser u) {
+		
+		
+		/*if(bindingresult.hasErrors()) {
+			return"formUser";
+		}
+		
+		String password = u.getEncrytedPassword();
+		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        u.setEncrytedPassword(encoder.encode(password));*/
+		
+		appuserrepository.save(u);
+		return "confirmation";
 	}
 }
