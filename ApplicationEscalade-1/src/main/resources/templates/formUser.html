@@ -1,17 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
 <link href="style.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
-<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 <title>Formulaire d'Inscription</title>
 </head>
 <body>
 
     <div class="container">
         
+        <p>Choisissez vos identifiants de connection : </p>
         <form th:action="@{save}" method="POST">
+
+             <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label class="control-label"> Nom: </label>
                 <input class="form-control" type="text" name="userName" th:value="${appuser.userName}"/>
@@ -22,7 +24,9 @@
                 <input class="form-control" type="text" name="encrytedPassword" th:value="${appuser.encrytedPassword}"/>
             </div>
 
-            <button type="submit" class="btn btn-primary"> Save </button>
+            <button type="submit" class="btn btn-primary"> Enregistrer </button>
+
+            </div>
         </form>
     </div>
 </body>

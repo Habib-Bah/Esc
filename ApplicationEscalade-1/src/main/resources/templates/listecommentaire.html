@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <a th:href="@{/}"> Retour</a>
+
   <div class="container spacer">
       <form th:action="@{ListeCommentaire}"methode="get">
 
@@ -21,7 +23,6 @@
 		
 		<tbody>
 			<tr th:each="t:${listecom}">
-			<td th:text="${t.id}"></td>
 			<td th:text="${t.nomutilisateur}"></td>
 			<td th:text="${t.texte}"></td>
 			

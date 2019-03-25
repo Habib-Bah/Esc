@@ -16,6 +16,8 @@
             <label>Pays : </label>
             <input type="text" name="Le Pays"/>
             <button type="submit" class="btn btn-primary"> Chercher </button>
+
+            <a th:href="@{/reservation}"class="boutton2"> Reserver un site </a>
         </div>
       </form>
   </div>
@@ -39,9 +41,6 @@
 			<td th:text="${t.nombredepoint}"></td>
 			<td th:text="${t.localisation}"></td>
             <td th:text="${t.disponibilite}"></td>
-            <td>
-                <a th:href="@{/reservation}"> Reserver</a>
-            </td>
 			</tr>
 		</tbody>
     </table>

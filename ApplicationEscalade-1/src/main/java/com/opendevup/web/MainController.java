@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.opendevup.dao.AppUserRepository;
+import com.opendevup.dao.CommentaireRepository;
 import com.opendevup.model.AppUser;
+import com.opendevup.model.Commentaire;
 import com.opendevup.utils.EncrytedPasswordUtils;
 import com.opendevup.utils.WebUtils;
 
@@ -20,6 +22,9 @@ public class MainController {
 
 	@Autowired
 	AppUserRepository appuserrepository;
+	
+	@Autowired
+	CommentaireRepository commentairerepository;
 	
 	EncrytedPasswordUtils encrypteP;
 	
@@ -112,4 +117,17 @@ public class MainController {
 		appuserrepository.save(u);
 		return "confirmation";
 	}
+	
+	@RequestMapping(value="/formc", method = RequestMethod.GET)
+    public String greetingForm(Model model) {
+        model.addAttribute("commentaire", new Commentaire());
+        return "formC";
+    }
+	
+	@RequestMapping(value="/saveC",method = RequestMethod.POST)
+    public String greetingSubmit(Model model, Commentaire c) {
+		
+		commentairerepository.save(c);
+        return "result";
+    }
 }

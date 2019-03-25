@@ -22,25 +22,27 @@
          </div>
      </header>
 
+
     <div class="container">
-        <div class="col-md-6 col-sm-6 col-xs-12">
-        <form th:action="@{/greeting}" th:object="${greeting}" method="post">
+        
+        <form th:action="@{saveC}" method="POST">
+            <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
-                <label>Nom:</label>
-                <input class="form-control" type="text" name="Nom" th:field="*{nomutilisateur}" placeholder="Votre Nom"/>
-               <!-- <span class="text-danger" th:errors="${commentaire.nomutilisateur}"></span>-->
+                <label class="control-label"> Nom: </label>
+                <input class="form-control" type="text" name="nomutilisateur" th:value="${commentaire.nomutilisateur}"/>
             </div>
 
             <div class="form-group">
-                <label>Texte:</label>
-                <input class="form-control" type="text" name="Texte" th:field="*{texte}" placeholder="Votre Texte"/>
-              <!--  <span class="text-danger" th:errors="${commentaire.texte}">></span> -->
+                <label class="control-label"> Texte: </label>
+                <textarea class="form-control" type="text" name="texte" th:value="${commentaire.texte}" placeholder="Votre Texte" cols="100", rows="10">  </textarea>
             </div>
 
-            <button class="btn btn-primary">Soumettre</button>
+            <button type="submit" class="btn btn-primary"> Soumettre </button>
+
             <a th:href="@{ListeCommentaire}"class="boutton2"> Consulter les commentaire </a> 
+            
+            </div>
         </form>
-    </div>
     </div>
 
      <footer>

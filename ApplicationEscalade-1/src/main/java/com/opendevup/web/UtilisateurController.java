@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,28 +26,6 @@ public class UtilisateurController {
 	
 	@Autowired
 	private CommentaireRepository commentairerepository;
-	
-	@GetMapping("/greeting")
-    public String greetingForm(Model model) {
-        model.addAttribute("greeting", new Commentaire());
-        return "greeting";
-    }
-	
-	@PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute Commentaire greeting) {
-        return "result";
-    }
-	
-	/*@RequestMapping(value="/saveCommentaire")
-	public String saveC(Model model, @Valid Commentaire c, BindingResult bindingresult) {
-		
-		if(bindingresult.hasErrors()) {
-			return"greeting";
-		}
-		
-		commentairerepository.save(c);
-		return "resultatcommentaire";
-	}*/
 	
 	@RequestMapping(value = "/ListeCommentaire")
 	public String ListCommentaire(Model model) {

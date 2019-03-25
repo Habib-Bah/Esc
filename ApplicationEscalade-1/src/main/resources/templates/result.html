@@ -1,12 +1,32 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Commentaire</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<title>Commentaire</title>
 </head>
 <body>
-	<h1>Votre commantaire</h1>
+
+      <header>
+         <div class="conteneur">
+             <nav>
+                 <ul>
+                   <li><a th:href="@{/}"> Acceuil</a></li>
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
+
+	<p>Votre commantaire</p>
     <p th:text="'Nom: ' + ${commentaire.nomutilisateur}" />
     <p th:text="'Text: ' + ${commentaire.texte}" />
+
+    <a th:href="@{ListeCommentaire}"class="boutton2"> Consulter les commentaire </a>
+
 </body>
 </html>

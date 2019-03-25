@@ -26,6 +26,9 @@ public class ApplicationEscalade1Application {
 		/*List<Site> sit = site.findByLocalisation("France");
 		
 		sit.forEach(s -> System.out.println(s.getNomsite()));*/
+		
+		//toposrepository.save(new Topos("Site Stark", 42, 25, "550m", "9A", 18, "France", true));
+		
 	}
 
 }
