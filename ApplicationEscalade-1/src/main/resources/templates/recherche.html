@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
- xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
-<title>Liste des Topos</title>
+<link href="style.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<title>Liste topos</title>
 </head>
 <body>
- 
+
+  <div class="container spacer">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID</th> <th>Nom site</th> <th>Secteur</th> <th>Voies</th> <th>Hauteur</th> <th>Cotation</th> <th>Points</th> <th>Localisation</th> <th>Disponibilité</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="t:${toposL}">
+			<td th:text="${t.id}"></td>
+			<td th:text="${t.nomsite}"></td>
+			<td th:text="${t.secteur}"></td>
+			<td th:text="${t.nombredevoie}"></td>
+			<td th:text="${t.hauteur}"></td>
+			<td th:text="${t.cotation}"></td>
+			<td th:text="${t.nombredepoint}"></td>
+			<td th:text="${t.localisation}"></td>
+            <td th:text="${t.disponibilite}"></td>
+			</tr>
+		</tbody>
+    </table>
+    
+  </div>
+	
 </body>
 </html>

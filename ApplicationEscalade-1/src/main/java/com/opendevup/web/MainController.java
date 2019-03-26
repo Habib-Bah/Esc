@@ -1,6 +1,7 @@
 package com.opendevup.web;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -9,22 +10,38 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.opendevup.dao.AppUserRepository;
 import com.opendevup.dao.CommentaireRepository;
+import com.opendevup.dao.ReservationRepository;
+import com.opendevup.dao.ToposRepository;
 import com.opendevup.model.AppUser;
 import com.opendevup.model.Commentaire;
+import com.opendevup.model.Reservation;
+import com.opendevup.model.Topos;
 import com.opendevup.utils.EncrytedPasswordUtils;
 import com.opendevup.utils.WebUtils;
 
 @Controller
 public class MainController {
 
+	static List <Topos> toposL;
+	
 	@Autowired
 	AppUserRepository appuserrepository;
 	
 	@Autowired
 	CommentaireRepository commentairerepository;
+	
+	@Autowired
+	ToposRepository toporepository;
+	
+	@Autowired
+	ToposRepository toposrepository;
+	
+	@Autowired
+	ReservationRepository reservationrepository;
 	
 	EncrytedPasswordUtils encrypteP;
 	
@@ -130,4 +147,49 @@ public class MainController {
 		commentairerepository.save(c);
         return "result";
     }
+	
+	
+	@RequestMapping(value = "/formR", method = RequestMethod.GET)
+	public String recherTopo(Model model, @RequestParam(name="localisation", defaultValue="")String mc) {
+		
+		toposL = toposrepository.findByLocalisation(mc);
+		model.addAttribute("toposL", toposL);
+		return "formR";
+	}
+	
+	@RequestMapping(value="/recherche",method = RequestMethod.POST)
+    public String reche(Model model) {
+		
+		model.addAttribute("toposL", toposL);
+		return "recherche";
+    }
+	
+	@RequestMapping(value="/formReservation", method = RequestMethod.GET)
+	public String formReservation(Model model) {
+		
+		model.addAttribute("reservation", new Reservation());
+		return "formReservation";
+	}
+	
+	@RequestMapping(value="/saveReservation", method = RequestMethod.POST)
+	public String saveR(Model model,  Reservation reservation) {
+		
+		List <Topos> t = toporepository.findAll();
+		
+		for( Topos topo : t) {
+			
+			if(topo.getNomsite().equalsIgnoreCase(reservation.getNomsite())) {
+				if(topo.isDisponibilite()) {
+					topo.setDisponibilite(false);
+				}
+				else {
+					return"mauvaiseReservation";
+				}
+			}
+			
+		}
+
+		reservationrepository.save(reservation);
+		return "resultatReservation";
+	}
 }

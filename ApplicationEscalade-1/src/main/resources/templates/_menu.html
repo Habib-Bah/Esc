@@ -15,7 +15,7 @@
                     <li> <a th:href="@{/admin}">Connexion</a> </li>      
                      <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
                      <li><a th:href="@{/form}"> Inscription</a></li>
-                   <!--  <li><a th:href="@{/greeting}">Commentaire</a></li> -->
+                    <li><a th:href="@{/formReservation}">Reserver</a></li>
                    <li><a th:href="@{/formc}">Commentaire</a>
                      <li> <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Deconnection</a> </li>
                  </ul>
@@ -91,18 +91,10 @@
      <section id="contact">
          <div class="conteneur">
              <br>
-             <h3> Contactez nous </h3>
+             <h3> Rejoins nous </h3>
              <br>
              <p> Partagez votre experience avec les autres utilisateurs à fin de vivre plainement votre experience</p>
              
-         <!--    <form>
-                 <label for="name"> Nom </label>
-                 <input type="text" id="name" placeholder="Votre nom">      
-                 
-                 <label for="mail"> Email </label>
-                 <input type="text" id="mail" placeholder="Votre Email">
-                 <input type="submit" value="OK" class="boutton3">
-             </form>-->
              
          </div>
      </section>

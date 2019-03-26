@@ -10,7 +10,7 @@
 <body>
      <div class="container">
         <div class="col-md-6 col-sm-6 col-xs-12">
-        <form th:action="@{reservation}" method="POST">
+        <form th:action="@{formr}" method="POST">
             <div class="form-group">
                 <label>Nom:</label>
                 <input class="form-control" type="text" name="nomutilisateur" th:value="${reservation.nomutilisateur}" placeholder="Votre Nom"/>
@@ -18,14 +18,20 @@
             </div>
 
             <div class="form-group">
-                <label>Email:</label>
-                <input class="form-control" type="text" name="email" th:value="${reservation.email}" placeholder="Votre Email"/>
+                <label>Nom site:</label>
+                <input class="form-control" type="text" name="nomsite" th:value="${reservation.nomsite}" placeholder="Le  site"/>
                 <span></span>
             </div>
 
             <div class="form-group">
-                <label>Nom site:</label>
-                <input class="form-control" type="text" name="nomsite" th:value="${reservation.nomsite}" placeholder="Le  site"/>
+                <label>Date debut au format jj/mm/aaaa :</label>
+                <input class="form-control" type="text" name="nomsite" th:value="${reservation.datedebut}" placeholder="Le  site"/>
+                <span></span>
+            </div>
+
+            <div class="form-group">
+                <label>Date fin au format jj/mm/aaaa :</label>
+                <input class="form-control" type="text" name="nomsite" th:value="${reservation.datefin}" placeholder="Le  site"/>
                 <span></span>
             </div>
 

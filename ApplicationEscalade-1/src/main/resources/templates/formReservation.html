@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<title>Commentaire</title>
+</head>
+<body>
+
+      <header>
+         <div class="conteneur">
+             <h1> Laissez votre commentaire<samp class="point-orange"> . </samp> </h1>
+             <nav>
+                 <ul>
+                   <li><a th:href="@{/}"> Acceuil</a></li>
+                  <!-- <li><a th:href="@{/formReservation}">Reserver</a></li> -->
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
+
+    <div class="container">
+        
+        <form th:action="@{saveReservation}" method="POST">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label"> Nom: </label>
+                <input class="form-control" type="text" name="nomutilisateur" th:value="${reservation.nomutilisateur}"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Nom du site: </label>
+                <input class="form-control" type="text" name="nomsite" th:value="${reservation.nomsite}"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Date debut au format JJ/MM/AAAA </label>
+                <input class="form-control" type="text" name="datedebut" th:value="${reservation.datedebut}"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Date de fin au format JJ/MM/AAAA </label>
+                <input class="form-control" type="text" name="datefin" th:value="${reservation.datefin}"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary"> Reserver </button>
+            
+            </div>
+        </form>
+    </div>
+
+     <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
+         
+         </div>
+     </footer>
+</body>
+</html>

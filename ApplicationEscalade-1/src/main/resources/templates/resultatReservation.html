@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<title>Reservation</title>
+</head>
+<body>
+
+      <header>
+         <div class="conteneur">
+             <nav>
+                 <ul>
+                   <li><a th:href="@{/}"> Acceuil</a></li>
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{Topos/Connexion}"> Connexion</a></li>
+                     <li><a th:href="@{/inscription}"> Inscription</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
+
+	<p>Votre reservation</p>
+    <p th:text="'Nom: ' + ${reservation.nomutilisateur}" />
+    <p th:text="'Site: ' + ${reservation.nomsite}" />
+    <p th:text="'Date de debut: ' + ${reservation.datedebut}" />
+    <p th:text="'Date de fin: ' + ${reservation.datefin}" />
+
+</body>
+</html>
