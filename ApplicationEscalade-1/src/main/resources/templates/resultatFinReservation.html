@@ -14,19 +14,17 @@
                  <ul>
                    <li><a th:href="@{/}"> Acceuil</a></li>
                      <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
-                     <li><a th:href="@{/formReservation}">Reserver</a></li>
-                    <li><a th:href="@{/greeting}">Commentaire</a></li>
+                      <li><a th:href="@{/formReservation}">Reserver</a></li>
+                    <li><a th:href="@{/formc}">Commentaire</a></li>
                  </ul>
              </nav>
          </div>
      </header>
 
 
-	<p>Votre reservation</p>
+	<p>Vous avez mis fin à cette reservation :</p>
     <p th:text="'Nom: ' + ${reservation.nomutilisateur}" />
     <p th:text="'Site: ' + ${reservation.nomsite}" />
-    <p th:text="'Date de debut: ' + ${reservation.datedebut}" />
-    <p th:text="'Date de fin: ' + ${reservation.datefin}" />
 
 </body>
 </html>

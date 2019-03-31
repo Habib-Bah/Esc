@@ -27,10 +27,10 @@
              <h1> Viens on grimpe<samp class="point-orange"> . </samp> </h1>
              <nav>
                  <ul>  
-                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
-                     <li><a th:href="@{/formTopos}">Ajouter topos</a></li>
+                     <li><a th:href="@{Topos/ListeTopos}">Topos</a></li>
+                     <li><a th:href="@{/formTopos}">Ajouter</a></li>
                      <li><a th:href="@{/formReservation}">Reserver</a></li>
-                     <li><a th:href="@{/greeting}">Commentaire</a></li>
+                     <li><a th:href="@{/formc}">Commentaire</a></li>
                      <li> <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Deconnection</a> </li>
                  </ul>
              </nav>
