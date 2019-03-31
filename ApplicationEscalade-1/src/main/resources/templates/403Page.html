@@ -28,7 +28,8 @@
              <nav>
                  <ul>  
                      <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
-                     <!--<li><a th:href="@{/form}"> Inscription</a></li>-->
+                     <li><a th:href="@{/formTopos}">Ajouter topos</a></li>
+                     <li><a th:href="@{/formReservation}">Reserver</a></li>
                      <li><a th:href="@{/greeting}">Commentaire</a></li>
                      <li> <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Deconnection</a> </li>
                  </ul>

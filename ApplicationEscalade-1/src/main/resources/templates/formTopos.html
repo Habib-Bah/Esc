@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<title>Commentaire</title>
+</head>
+<body>
+
+      <header>
+         <div class="conteneur">
+             <h1> Laissez votre commentaire<samp class="point-orange"> . </samp> </h1>
+             <nav>
+                 <ul>
+                   <li><a th:href="@{/}"> Acceuil</a></li>
+                     <li><a th:href="@{Topos/ListeTopos}"> Les topos</a></li>
+                     <li><a th:href="@{/formc}">Commentaire</a></li>
+                 </ul>
+             </nav>
+         </div>
+     </header>
+
+
+    <div class="container">
+        
+        <form th:action="@{saveTopo}" method="POST">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label class="control-label"> Nom du site: </label>
+                <input class="form-control" type="text" name="nomsite" th:value="${topos.nomsite}" placeholder="Entrer le nom du site"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Secteur: </label>
+                <input class="form-control" type="text" name="secteur" th:value="${topos.secteur}" placeholder="Entrer la valeur"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Nombre de voies : </label>
+                <input class="form-control" type="text" name="nombredevoie" th:value="${topos.nombredevoie}" placeholder="Entrer la valeur"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Hauteur : </label>
+                <input class="form-control" type="text" name="hauteur" th:value="${topos.hauteur}" placeholder="Saisire la hauteur en mettre"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Cotation : </label>
+                <input class="form-control" type="text" name="cotation" th:value="${topos.cotation}" placeholder="De 3 à 9C"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Nombre de points :</label>
+                <input class="form-control" type="text" name="nombredepoint" th:value="${topos.nombredepoint}" placeholder="Saisir la valeur"/>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"> Localisation :</label>
+                <input class="form-control" type="text" name="localisation" th:value="${topos.localisation}" placeholder="Entrer le pays"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary"> Enregistrer </button>
+            
+            </div>
+        </form>
+
+    </div>
+
+     <footer>
+         <div class="conteneur">
+             <h1> Notre communauté <samp class="point-orange">.</samp></h1>
+             <div class="copyright"> copyright 2019. Tout droits réservés.</div>
+         
+         </div>
+     </footer>
+</body>
+</html>

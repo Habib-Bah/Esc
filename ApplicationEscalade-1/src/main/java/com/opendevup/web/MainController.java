@@ -178,7 +178,7 @@ public class MainController {
 		
 		for( Topos topo : t) {
 			
-			if(topo.getNomsite().equalsIgnoreCase(reservation.getNomsite())) {
+			if(topo.getNomsite().equalsIgnoreCase(reservation.getNomsite()) || !topo.getNomsite().equalsIgnoreCase(reservation.getNomsite())) {
 				if(topo.isDisponibilite()) {
 					topo.setDisponibilite(false);
 				}
@@ -191,5 +191,20 @@ public class MainController {
 
 		reservationrepository.save(reservation);
 		return "resultatReservation";
+	}
+	
+	@RequestMapping(value="/formTopos", method = RequestMethod.GET)
+	public String formTopo(Model model) {
+		
+		model.addAttribute("topos", new Topos());
+		return "formTopos";
+	}
+	
+	@RequestMapping(value="/saveTopo", method = RequestMethod.POST)
+	public String saveT(Model model,  Topos topos) {
+		
+		topos.setDisponibilite(true);
+		toporepository.save(topos);
+		return "resultatTopos";
 	}
 }
