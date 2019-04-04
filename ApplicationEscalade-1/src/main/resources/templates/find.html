@@ -10,7 +10,7 @@
 
       <header>
          <div class="conteneur">
-             <p>Veuillez saisir les informations sur votre topo <samp class="point-orange"> . </samp> </p>
+             <p>Veuillez saisir les critères de recherche <samp class="point-orange"> . </samp> </p>
              <nav>
                  <ul>
                    <li><a th:href="@{/}"> Acceuil</a></li>
@@ -24,21 +24,17 @@
 
     <div class="container">
         
-        <form th:action="@{saveTopo}" method="POST">
+        <form th:action="@{saveFind}" method="POST">
             <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-                <label class="control-label"> Nom du site: </label>
-                <input class="form-control" type="text" name="nomsite" th:value="${topos.nomsite}" placeholder="Entrer le nom du site"/>
-            </div>
 
             <div class="form-group">
                 <label class="control-label"> Secteur: </label>
-                <input class="form-control" type="text" name="secteur" th:value="${topos.secteur}" placeholder="Entrer la valeur"/>
+                <input class="form-control" type="text" name="secteur" th:value="${topos.secteur}" placeholder="Entrer la valeur "/>
             </div>
 
             <div class="form-group">
                 <label class="control-label"> Nombre de voies : </label>
-                <input class="form-control" type="text" name="nombredevoie" th:value="${topos.nombredevoie}" placeholder="Entrer la valeur"/>
+                <input class="form-control" type="text" name="nombredevoie" th:value="${topos.nombredevoie}" placeholder="Entrer la valeur souhaitée"/>
             </div>
 
             <div class="form-group">
@@ -53,15 +49,15 @@
 
             <div class="form-group">
                 <label class="control-label"> Nombre de points :</label>
-                <input class="form-control" type="text" name="nombredepoint" th:value="${topos.nombredepoint}" placeholder="Saisir la valeur"/>
+                <input class="form-control" type="text" name="nombredepoint" th:value="${topos.nombredepoint}" placeholder="Saisir la valeur souhaitée"/>
             </div>
 
             <div class="form-group">
                 <label class="control-label"> Localisation :</label>
-                <input class="form-control" type="text" name="localisation" th:value="${topos.localisation}" placeholder="Entrer le pays"/>
+                <input class="form-control" type="text" name="localisation" th:value="${topos.localisation}" placeholder="Entrer le pays souhaité"/>
             </div>
 
-            <button type="submit" class="btn btn-primary"> Enregistrer </button>
+            <button type="submit" class="btn btn-primary"> Rechercher </button>
             
             </div>
         </form>

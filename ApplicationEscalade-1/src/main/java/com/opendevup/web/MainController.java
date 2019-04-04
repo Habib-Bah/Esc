@@ -1,6 +1,7 @@
 package com.opendevup.web;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class MainController {
 
 	@Autowired
 	ToposRepository toposrepository;
-
+	
 	@Autowired
 	ReservationRepository reservationrepository;
 
@@ -231,5 +232,31 @@ public class MainController {
 
 		}
 		return "resultatFinReservation";
+	}
+	
+	
+	@RequestMapping(value = "/find", method = RequestMethod.GET)
+	public String find(Model model) {
+
+		model.addAttribute("topos", new Topos());
+		return "find";
+	}
+
+	@RequestMapping(value = "/saveFind", method = RequestMethod.POST)
+	public String save(Model model, Topos topos) {
+
+		
+	List<Topos>tp = toposrepository.findAll();
+	
+	List<Topos> topo = new ArrayList<>();
+	
+	for(Topos t : tp) {
+		if (t.getLocalisation().equalsIgnoreCase(topos.getLocalisation())) {
+			topo.add(t);
+		}
+	}
+	model.addAttribute("topo", topo);
+		
+		return "findResult";
 	}
 }

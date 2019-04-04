@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<title>Liste topos</title>
+</head>
+<body>
+
+    <p>Voici les meilleurs resultats de votre recherche.</p>
+
+    <p>Veuillez vous connecter pour reserver votre site.</p>
+
+    <div class="container spacer">
+         <a th:href="@{/admin}">Connexion</a>
+    </div>
+    
+  <div class="container spacer">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nom site</th> <th>Secteur</th> <th>Voies</th> <th>Hauteur</th> <th>Cotation</th> <th>Points</th> <th>Localisation</th> <th>Disponibilité</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="t:${topo}">
+			<td th:text="${t.nomsite}"></td>
+			<td th:text="${t.secteur}"></td>
+			<td th:text="${t.nombredevoie}"></td>
+			<td th:text="${t.hauteur}"></td>
+			<td th:text="${t.cotation}"></td>
+			<td th:text="${t.nombredepoint}"></td>
+			<td th:text="${t.localisation}"></td>
+            <td th:text="${t.disponibilite}"></td>
+			</tr>
+		</tbody>
+    </table>
+    
+  </div>
+	
+</body>
+</html>
